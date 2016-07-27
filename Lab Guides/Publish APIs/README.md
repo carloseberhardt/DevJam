@@ -1,6 +1,6 @@
 ![](./media/image46.png)
 
-*Lab 3 – Publish APIs*
+*Publish APIs*
 
 ![](./media/image48.png)
 

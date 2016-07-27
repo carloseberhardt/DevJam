@@ -13,7 +13,7 @@ Welcome to the Apigee SpringOne DevJam. In this repository you'll find labs inst
 | Name 										 														                            | Duration 	|
 |-------------------------------------------------------------------------------------------------------------------------------|---------	|
 | [Lab 0 - Prepare our PCF Space - deploy API, create Edge Service](./Lab%20Guides/Prepare%20PCF)                                                           | 20 mins   |
-| [Lab 1 – Bind a Route to the Apigee Edge Service](./Lab%20Guides/Bind%20Route%20%Service)  	| 20 mins 	|
+| [Lab 1 – Bind a Route to the Apigee Edge Service](./Lab%20Guides/Bind%20Route%20Service)  	| 20 mins 	|
 | [Lab 2 – Traffic Management for APIs](./Lab%20Guides/Traffic%20Management%20for%20APIs)          			          | 30 mins 	|
 | [Lab 3 – Publish APIs](./Lab%20Guides/Publish%20APIs)                         							                    | 60 mins 	|
 | [Lab 4 - Securing APIs (OAuth)](./Lab%20Guides/Securing%20APIs%20(OAuth))          			            | 30 mins 	|
@@ -21,6 +21,8 @@ Welcome to the Apigee SpringOne DevJam. In this repository you'll find labs inst
 
 
 #### Appendix
+##### NOTE: Appendix items are designed around Apigee Edge only.
+The following labs have no specific Pivotal Cloud Foundry activities. We've left them here in case you would like to explore beyond the content covered in the session.
 
 | Name 										 														                            | Duration 	|
 |-------------------------------------------------------------------------------------------------------------------------------|---------	|
@@ -32,5 +34,3 @@ Welcome to the Apigee SpringOne DevJam. In this repository you'll find labs inst
 | [Building APIs using Node](./Lab%20Guides/Building%20APIs%20using%20Node.js)             			| 60 mins 	|
 | [Build APIs from Web Services](./Lab%20Guides/Build%20APIs%20from%20Web%20Services)             	| 15 mins 	|
 | [Introduction to API BaaS](./Lab%20Guides/Introduction%20to%20API%20BaaS%20(Backend-as-a-Service))      | 30 mins 	|
-
-##### NOTE: Appendix items are designed around Apigee Edge only. No specific Cloud Foundry activities.
