@@ -12,7 +12,7 @@ Welcome to the Apigee SpringOne DevJam. In this repository you'll find labs inst
 
 | Name 										 														                            | Duration 	|
 |-------------------------------------------------------------------------------------------------------------------------------|---------	|
-| [Lab 0 - Prepare our PCF Space - deploy API, create Edge Service](./Lab%20Guides/Prepare%20PCF)                                                           | 20 mins   |
+| [Lab 0 - Prepare our PCF Space and Deploy Sample API](./Lab%20Guides/Prepare%20PCF)                                                           | 20 mins   |
 | [Lab 1 – Bind a Route to the Apigee Edge Service](./Lab%20Guides/Bind%20Route%20Service)  	| 20 mins 	|
 | [Lab 2 – Traffic Management for APIs](./Lab%20Guides/Traffic%20Management%20for%20APIs)          			          | 30 mins 	|
 | [Lab 3 – Publish APIs](./Lab%20Guides/Publish%20APIs)                         							                    | 60 mins 	|
