@@ -4,6 +4,8 @@
 
 ![](./media/image18.png)
 
+## NOTICE for SpringOne DevJam --- this document has not been modified for the SpringOne session and it refers to proxies, etc that we don't have. Substitute your route services proxy as appropriate. Please don't hesitate to ask for clarification on anything!
+
 ## Overview
 
 To maintain performance and availability across a diverse base of client apps, it's critical to maintain app traffic within the limits of the capacity of your APIs and backend services. It's also important to ensure that apps don't consume more resources than permitted.
