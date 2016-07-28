@@ -15,18 +15,18 @@ This policy smoothes traffic spikes by dividing a limit that you define into sma
 100 messages per second, the Spike Arrest policy enforces a limit of about 1 request every 10 milliseconds (1000 / 100); and 30 messages
 per minute is smoothed into about 1 request every 2 seconds (60 / 30). The Spike Arrest limit should be close to capacity calculated for
 either your backend service or the API proxy itself. The limit should also be configured for shorter time intervals, such as seconds or minutes. This policy should be used to prevent sudden traffic bursts caused by malicious attackers attempting to disrupt a service using a denial-of-service (DOS) attack or by buggy client applications.
-See [Spike Arrest policy](http://apigee.com/docs/ja/api-services/reference/spike-arrest-policy).
+See [Spike Arrest policy](http://apigee.com/docs/api-services/reference/spike-arrest-policy).
 
 #### Quota Policy
 This policy enforces consumption limits on client apps by maintaining a distributed 'counter' that tallies incoming requests. The counter
 can tally API calls for any identifiable entity, including apps, developers, API keys, access tokens, and so on. Usually, API keys are
 used to identify client apps. This policy is computationally expensive so, for high-traffic APIs, it should configured for longer time
 intervals, such as a day or month. This policy should be used to enforce business contracts or SLAs with developers and partners, rather than for operational traffic management.
-See [Quota policy](http://apigee.com/docs/ja/api-services/reference/quota-policy).
+See [Quota policy](http://apigee.com/docs/api-services/reference/quota-policy).
 
 #### Concurrent Rate Limit Policy
 This policy enables traffic management between API Services and your backend services. Some backend services, such as legacy applications, may have strict limits on the number of simultaneous connections they can support. This policy enforces a limit on the number of requests that can be sent at any given time from API services to your backend service. This number is counted across all of the distributed instances of API Services that may be calling your backend service. Policy limits and time duration should be configured to match the capacity available for your backend service.
-See [Concurrent Rate Limit policy](http://apigee.com/docs/ja/node/11646).
+See [Concurrent Rate Limit policy](http://apigee.com/docs/node/11646).
 
 #### Caching Policies
 Apigee Edge supports different caching policies enabling you to:

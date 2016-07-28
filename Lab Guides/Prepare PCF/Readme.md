@@ -1,7 +1,7 @@
 ## Welcome
 Welcome to the Apigee & Pivotal Cloud Foundry hands-on Workshop!
 
-We have a couple of prerequisites to get out of the way to ensure that you can complete the logs successfully.
+We have a couple of prerequisites to get out of the way to ensure that you can complete the labs successfully.
 
 1. Laptop.
 2. Apigee trial or paid account.
