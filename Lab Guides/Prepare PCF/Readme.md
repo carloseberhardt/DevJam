@@ -7,6 +7,7 @@ We have a couple of prerequisites to get out of the way to ensure that you can c
 2. Apigee trial or paid account.
 3. Cloud Foundry CLI
 4. Account on our Pivotal Cloud Foundry platform.
+5. An API to deploy
 
 
 ### Laptop
@@ -25,66 +26,72 @@ We have a sample Spring Boot API project that we will deploy during the session.
 We have a shared PCF environment. We're not creating individual accounts out there for you, so no shenanigans, please. We'll use a shared login and org but please create your own spaces.
 
 1. Target the API
-```Shell
-➜  ~
-➜  ~ cf api https://api.pcf.apigeese.net --skip-ssl-validation
-Setting api endpoint to https://api.pcf.apigeese.net...
-OK
+
+  ```Shell
+  ➜  ~
+  ➜  ~ cf api https://api.pcf.apigeese.net --skip-ssl-validation
+  Setting api endpoint to https://api.pcf.apigeese.net...
+  OK
 
 
-API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
-Not logged in. Use 'cf login' to log in.
-➜  ~
-```
+  API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
+  Not logged in. Use 'cf login' to log in.
+  ➜  ~
+  ```
 
 2. Log in with email springone and password ***REMOVED*** (all lower case).
-```Shell
-➜  ~ cf login
-API endpoint: https://api.pcf.apigeese.net
 
-Email> springone
+  ```Shell
+  ➜  ~ cf login
+  API endpoint: https://api.pcf.apigeese.net
 
-Password>
-Authenticating...
-OK
+  Email> springone
 
-Targeted org springone
+  Password>
+  Authenticating...
+  OK
+
+  Targeted org springone
 
 
 
-API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
-User:           springone
-Org:            springone
-Space:          No space targeted, use 'cf target -s SPACE'
-➜  ~
-```
+  API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
+  User:           springone
+  Org:            springone
+  Space:          No space targeted, use 'cf target -s SPACE'
+  ➜  ~
+  ```
 
 3. Create a space for yourself. Since we're all sharing one account and org please give it a unique name. Use your name, your nick, your CB handle, etc. (Do not use your SSN or other sensitive data. C'mon people. And don't use "carloseberhardt" that one's already there.)
-```Shell
-➜  ~ cf create-space carloseberhardt
-Creating space carloseberhardt in org springone as springone...
-OK
-Assigning role RoleSpaceManager to user springone in org springone / space carloseberhardt as springone...
-OK
-Assigning role RoleSpaceDeveloper to user springone in org springone / space carloseberhardt as springone...
-OK
 
-TIP: Use 'cf target -o "springone" -s "carloseberhardt"' to target new space
-➜  ~
-```
+  ```Shell
+  ➜  ~ cf create-space carloseberhardt
+  Creating space carloseberhardt in org springone as springone...
+  OK
+  Assigning role RoleSpaceManager to user springone in org springone / space carloseberhardt as springone...
+  OK
+  Assigning role RoleSpaceDeveloper to user springone in org springone / space carloseberhardt as springone...
+  OK
+
+  TIP: Use 'cf target -o "springone" -s "carloseberhardt"' to target new space
+  ➜  ~
+  ```
 
 4. Target the space. (Substitute your space name for 'carloseberhardt' in the command below, naturally.)
-```Shell
-➜  ~ cf target -s carloseberhardt
 
-API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
-User:           springone
-Org:            springone
-Space:          carloseberhardt
-➜  ~
-```
+  ```Shell
+  ➜  ~ cf target -s carloseberhardt
 
-5. Grab the first release of the example API, available here: [https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0(https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0)]
+  API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
+  User:           springone
+  Org:            springone
+  Space:          carloseberhardt
+  ➜  ~
+  ```
+
+### An API to Deploy
+
+1. Grab the first release of the example API, available here: [https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0(https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0)]
 ```Shell
 ➜  ~ mkdir working
 ➜  ~ cd working
@@ -105,7 +112,7 @@ drwxrwxr-x  4 ubuntu ubuntu 4.0K Dec 29  2015 quote-service-1.0.0
 ➜  working
 ```
 
-6. Build and verify the API locally. This will may take some time, depending upon how much of the internet you need to download.
+2. Build and verify the API locally. This will may take some time, depending upon how much of the internet you need to download.
 
 Build it...
 
@@ -160,7 +167,7 @@ And in another console, test it...
 {"created":"2016-07-27T21:25:16Z","DaysLow":737.0,"Open":738.42,"PreviousClose":738.42,"Volume":799448,"Price":742.14,"DaysHigh":743.93,"Name":"Alphabet Inc.","Symbol":"GOOG","Change":3.72,"PercentageChange":"+0.50%","Ask":742.16,"Bid":741.85}%                                                                                                                                                                ➜  ~
 ```
 
-7. Assuming everything is working as expected, we can now deploy this api to PCF. Since we're all playing in the same space, please give it a unique name and/or route when you push the app. In the next few minutes, we'll be binding the route for this API to the Apigee Edge route service. That means we'll want to keep our routes unique and avoid conflicts.
+3. Assuming everything is working as expected, we can now deploy this api to PCF. Since we're all playing in the same space, please give it a unique name and/or route when you push the app. In the next few minutes, we'll be binding the route for this API to the Apigee Edge route service. That means we'll want to keep our routes unique and avoid conflicts.
 
 ```Shell
 ➜  quote-service-1.0.0 cf target
