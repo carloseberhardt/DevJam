@@ -3,8 +3,11 @@
 
 ##Git Client
 
-Download and install Git Client from here:
+Download and install the latest Git Client from here:
 [*https://git-scm.com/downloads*](https://git-scm.com/downloads)
+Windows Users: [*https://git-scm.com/download/win*](https://git-scm.com/download/win)
+NOTE: If you already have a Git client, you can use it. We use GitHub in this lab as the 
+source code repo. As long as your Git client can work with GitHub, you are all set. 
 
 Required for Lab 3
 
@@ -49,3 +52,6 @@ Download and intall cURL from here:
 ### PostMan (Chrome Plugin)
 
 [*https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en*](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+
+### RESTClient (FireFox Plugin)
+[*https://addons.mozilla.org/en-US/firefox/addon/restclient/*](https://addons.mozilla.org/en-US/firefox/addon/restclient/)

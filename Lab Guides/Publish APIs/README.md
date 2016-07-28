@@ -1,8 +1,11 @@
 ![](./media/image46.png)
 
-*Lab 3 – Publish APIs*
+*Publish APIs*
 
 ![](./media/image48.png)
+
+## NOTICE for SpringOne DevJam --- this document has not been modified for the SpringOne session and it refers to proxies, etc that we don't have. Substitute your route services proxy as appropriate. Please don't hesitate to ask for clarification on anything!
+
 
 **Objectives**
 
@@ -11,19 +14,12 @@ Publishing APIs can be broadly defined by the following tasks:
 1.  Create the API products on Edge that bundle your APIs.
 2.  Register app developers on Edge.
 3.  Register apps on Edge.
-4.  Provide documentation and community support for your APIs,
-    including:
-    -   API reference documentation
-    -   Examples and tutorials
-    -   Forums, blogs, and other features to foster the developer
-        community
 
 **Prerequisites**
 
 -   At a minimum, Lab 1 is completed
--   A developer portal is provisioned
 
-**Estimated Time: 60 mins**
+**Estimated Time: 30 mins**
 
 > ![](./media/image03.png)
 
@@ -225,135 +221,109 @@ and generate keys:
 
 7)  Click **‘Save’** to save the API Product**.** The new product should now be listed on the ‘Products’ page.
 
-**Developer Portal**
-
-Developer portals with social publishing features are increasingly being used for communication with the developer community. This includes communicating static content, such as API documentation and
-terms-of-use, as well as dynamic community-contributed content such as blogs and forums.
-
-As an API provider, you need a way to expose your APIs, educate
-developers about your APIs, sign up developers, and let developers
-register apps. Exposing your APIs to developers is only part of creating a truly dynamic community. You also need a way for your developer community to provide feedback, make support and feature requests, and submit their own content that can be accessed by other developers.
-
-![](./media/image61.png)
-
 **Developers**
 
 Developers access your APIs through apps. When the developer registers an app, they receive a single API key that allows them to access all of the API products associated with the app. However, developers must be registered before they can register an app.
 
-**Register a developer from the developer portal**
+8)  **Registering a Developer**
 
-1)  Ask your instructor for the URL for the developer portal. On the developer portal home page select **Register**
+Developers access your APIs through apps. When the developer registers
+an app, they receive a single API key that allows them to access all
+of the API products associated with the app. However, developers must
+be registered before they can register an app.
 
-> ![](./media/image62.png)
+Developers typically have several ways of registering:
 
-2)  The registration page appears
+-   If you have a paid Edge account, through a Developer
+    Services portal. See [Add and manage user
+    accounts](http://apigee.com/docs/developer-services/content/add-and-manage-user-accounts)
+    for more.
 
-> ![](./media/image63.png)
+-   By accessing a form that uses the Edge management API to register
+    the developer. See [Using the Edge management API to Publish
+    APIs](http://apigee.com/docs/developers-services/content/using-edge-management-api-publish-apis)
+    for more.
 
-3)  Enter the required information and select **Create new account**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
+-   By a back-end administrator using the Edge management UI.
 
-**NOTE**: If you see this message:
+The following steps describe the process of registering Developers and Developer Apps
+using the Apigee Edge Management UI.
 
-> ![](./media/image64.png)
+    a. From the Apigee Edge Management UI, go to Publish → Developers
 
-Then the developer portal administrator MUST approve the developer
-before the developer can sign in. If you see this message ask your instructor to approve your developer account - once that is done then login to the portal.
+    b. Click on ‘+ Developer’ button to add a new product
 
-**Register an app from the developer portal:**
+    c. Add a new developer with the following properties:
+        -   First Name: Your First Name
+        -   Last Name: Your Last Name
+        -   Email: {your email_id}        
+        -   Username: {firstname_lastname}
 
-Developers register apps to access your API products. When a developer registers an app, the developer selects the API products to associate with the app and Edge generates an API key. Each app has a single API key that provides access to all API products associated with the app.
+  > ![](./media/image22.png)
 
-Apps allow you to control who can access your APIs. You can revoke an app's key, preventing it from accessing all API products. Or you can revoke access to a single API product associated with the app.
+    d.  Click ‘Save’ to save the Developer. The new developer should now
+    be listed on the ‘Developer’ page.
 
-![](./media/image65.png)
+    NOTE : If you have already created a Developer App as part of the lab-3,
+    you can skip this step.
 
-4)  Select **My apps** below your username in the login menu
+9)  **Registering a Developer App**
 
-> ![](./media/image66.png)
+Now that you have an API product and a developer, you can register a
+Developer App with the API product. Registering the Developer App
+generates the API key for the API products associated with the app.
+You can then distribute the key to app developers so they can access
+the features in the API products from the app.
 
-5)  Click the **+ Add a** **new App** icon.
+The following steps describe the process of registering Developer Apps using the Apigee Edge Management UI.
 
-> ![](./media/image39.png)
+    a. From the Apigee Edge Management UI, go to Publish → Developer Apps
 
-6)  Enter details for the application and hit **Create App**
+    b. Click on ‘+ Developer App’ button to add a new product
 
-> ![](./media/image40.png)
+    c. In the ‘Developer App Details’ section, enter or select
+    the following values for the various fields:
 
-> NOTE: Select the product that you created in the previous step.
+        -   Display Name: {Your_Initials}_iExplore App
+        -   Developer: {Your_name}
+        -   Callback URL: Leave it blank
 
-7)  Open your new app to view the Consumer Key (aka API Key) and Consumer Secret (aka
-    API Secret)
+    d. In the ‘Products’ section, click on the ‘+ Product’ button
 
-> ![](./media/image41.png)
+    e. From the ‘Product’ drop-down, select the product you created.
 
-8)  Test the API
+    f. Click the ‘check-mark’ button in the ‘Actions’ column to accept
+    the changes
+
+> ![](./media/image23.png)
+
+    g. Click ‘Save’ to save the Developer App. The new app should now be
+    listed on the ‘Developer Apps’ page
+
+    h. From the ‘Developer Apps’ page, select your App.
+
+    i. In the ‘Products’ section, next to the entry for
+    ‘{Your_Initials}_Hospitality Basic Product,’ click ‘Show’ in
+    the ‘Consumer Key’ and ‘Consumer Secret’ columns to display the generated keys
+
+**Note:** Since you selected ‘Key Approval Type: Automatic’ when you
+created the API product, the API key is automatically approved and you
+can view it immediately
+
+If you had selected ‘Approval Type: Manual,’ you would need to click
+‘Approve’ in the ‘Actions’ column to approve the API key.
+
+10)  Test the API
 
 &nbsp;&nbsp;a.  Start the Trace session for the ‘**{your\_initials}\_hotels**’ proxy
 
-&nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET hotels’ request from Postman with the following query parameters: **zipcode=98101&radius=200&apikey={apikey from the dev portal}**
+&nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET hotels’ request from Postman with the following query parameters: **zipcode=98101&radius=200&apikey={apikey from the application}**
 
 > Note: Replace the URL of hotels API with **{your\_initials}**\_hotel
 
-**Generate API Documentation**
-
-1) Create a model
-
-When you create a model, it's stored in your Edge organization as the
-source for the API structure. For more information, see [*About SmartDoc
-models and
-templates*](http://apigee.com/docs/developer-services/content/using-smartdocs-document-apis#models).
-
-&nbsp;&nbsp;a.  Ask you instructor to change your developer user to have administrator access in the portal. Logout and then back in to the developer portal.
-
-&nbsp;&nbsp;b.  Select **Content > SmartDocs** in the Drupal administration menu.
-
-> ![](./media/image42.png)
-
-&nbsp;&nbsp;c.  Select **New model** at the top of the page
-
-&nbsp;&nbsp;d.  Enter the following fields:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- **Name**: The model name that will be displayed across the site.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- **Internal name**: As you type the **Name**, the internal name displays. The internal name for the model that must be unique among all models.  The internal name must contain only lowercase letters, numbers, and hyphens with no spaces. Select **Edit** to edit this name.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- **Description**: A description of the model.
-
-> ![](./media/image43.png)
-
-2)  Select **Create Model**.
-
-3)  Click on ‘Import’ to import an API specification
-
-![](./media/image44.png)
-
-&nbsp;&nbsp;a.  The API specification can be of Swagger 1.2, Swagger 2.0 (JSON or YAML) or WADL formats. In this example, we will use Swagger 2.0 – YAML.<br/>
-Open the **hotels-openapi.yaml** file from the lab material in a text editor and change the {baas_org} on line 14 to match your baas org and save the file.<br/>
-Back in the dev portal administrator, select the **hotels-openapi.yaml** file
-
-> ![](./media/image45.png)
-
-&nbsp;&nbsp;b.  Click on ‘**Import’**
-
-&nbsp;&nbsp;c.  Select all the Operations//Methods that should be published (we will select all)
-
-> ![](./media/image33.png)
-
-&nbsp;&nbsp;d.  Click on ‘**Update**’
-
-&nbsp;&nbsp;e.  Click on ‘View API Documentation’ to see the published documentation
-
-> ![](./media/image34.png)
-
-&nbsp;&nbsp;f.  Click on ‘**hotels-get**’
-
-> ![](./media/image35.png)
-
-&nbsp;&nbsp;g.  Enter ‘**application/json**’ as the Content-Type. Leave the radius and zipcode empty
-
-&nbsp;&nbsp;h.  Click on ‘**Send this request**’
-
-> ![](./media/image36.png)
 
 **Summary**
 
 In this exercise, you learnt about how API keys can be used as an
 application identifier, how APIs can be packaged in the form of
-Products. You also saw how to publish API documentation to the developer portal and finally, how developers are onboarded and how developer applications are registered.
+Products.

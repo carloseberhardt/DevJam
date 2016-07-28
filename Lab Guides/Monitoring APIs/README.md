@@ -1,6 +1,6 @@
 ![](./media/image18.png)
 
-*Appendix 3 - Monitoring your APIs’ Health*
+*Monitoring your APIs’ Health*
 
 ![](./media/image20.png)
 

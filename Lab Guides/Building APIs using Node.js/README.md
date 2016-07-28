@@ -1,6 +1,6 @@
 ![](./media/image01.png)
 
-*Appendix 5 - Building APIs using Node.js*
+*Building APIs using Node.js*
 
 ![](./media/image11.png)
 

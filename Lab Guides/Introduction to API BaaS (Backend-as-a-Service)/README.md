@@ -1,6 +1,6 @@
 ![](./media/image02.png)
 
-*Lab 5 - Introduction to API BaaS (Backend-as-a-Service)*
+*Introduction to API BaaS (Backend-as-a-Service)*
 
 **Overview**
 

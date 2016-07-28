@@ -117,7 +117,7 @@ var express = require('express');
 var app = express();
 
 app.set('port', process.env.PORT || 3000); // When running local, app
-will listen on port 3000
+//will listen on port 3000
 
 app.get('/hello', renderHello);
 

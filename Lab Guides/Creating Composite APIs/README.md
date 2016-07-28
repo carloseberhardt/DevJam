@@ -1,6 +1,6 @@
 ![](./media/image08.png)
 
-*Appendix 1 - Creating Composite APIs*
+*Creating Composite APIs*
 
 ![](./media/image12.png)
 

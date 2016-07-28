@@ -1,6 +1,6 @@
 ![](./media/image18.png)
 
-*Appendix 6 - Build APIs from Web Services*
+*Build APIs from Web Services*
 
 ![](./media/image19.png)
 

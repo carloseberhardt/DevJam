@@ -1,6 +1,6 @@
 ![](./media/image01.png)
 
-*Appendix 4 - Apigee Edge Microgateway*
+*Apigee Edge Microgateway*
 
 Apigee Edge Microgateway is a secure, HTTP-based message processor for
 APIs. Its main job is to process requests and responses to and from
