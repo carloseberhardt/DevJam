@@ -92,124 +92,126 @@ We have a shared PCF environment. We're not creating individual accounts out the
 ### An API to Deploy
 
 1. Grab the first release of the example API, available here: [https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0(https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0)]
-```Shell
-➜  ~ mkdir working
-➜  ~ cd working
-➜  working curl -O -L https://github.com/carloseberhardt/quote-service/archive/v1.0.0.tar.gz
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   137    0   137    0     0   3611      0 --:--:-- --:--:-- --:--:--  3702
-  0     0    0  6219    0     0  78883      0 --:--:-- --:--:-- --:--:-- 78883
-➜  working ls
-v1.0.0.tar.gz
-➜  working tar xzf v1.0.0.tar.gz
-➜  working l
-total 20K
-drwxrwxr-x  3 ubuntu ubuntu 4.0K Jul 27 20:55 .
-drwxr-xr-x 10 ubuntu ubuntu 4.0K Jul 27 20:55 ..
-drwxrwxr-x  4 ubuntu ubuntu 4.0K Dec 29  2015 quote-service-1.0.0
--rw-rw-r--  1 ubuntu ubuntu 6.1K Jul 27 20:55 v1.0.0.tar.gz
-➜  working
-```
+
+  ```Shell
+  ➜  ~ mkdir working
+  ➜  ~ cd working
+  ➜  working curl -O -L https://github.com/carloseberhardt/quote-service/archive/v1.0.0.tar.gz
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+  100   137    0   137    0     0   3611      0 --:--:-- --:--:-- --:--:--  3702
+    0     0    0  6219    0     0  78883      0 --:--:-- --:--:-- --:--:-- 78883
+  ➜  working ls
+  v1.0.0.tar.gz
+  ➜  working tar xzf v1.0.0.tar.gz
+  ➜  working l
+  total 20K
+  drwxrwxr-x  3 ubuntu ubuntu 4.0K Jul 27 20:55 .
+  drwxr-xr-x 10 ubuntu ubuntu 4.0K Jul 27 20:55 ..
+  drwxrwxr-x  4 ubuntu ubuntu 4.0K Dec 29  2015 quote-service-1.0.0
+  -rw-rw-r--  1 ubuntu ubuntu 6.1K Jul 27 20:55 v1.0.0.tar.gz
+  ➜  working
+  ```
 
 2. Build and verify the API locally. This will may take some time, depending upon how much of the internet you need to download.
 
-Build it...
+  * Build it...
 
-```Shell
-➜  working
-➜  working cd quote-service-1.0.0
-➜  quote-service-1.0.0 mvn clean install
-[INFO] Scanning for projects...
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] Building quote-service 1.0.0
-[INFO] ------------------------------------------------------------------------
-[INFO]
-[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ quote-service ---
-[INFO]
+  ```Shell
+  ➜  working
+  ➜  working cd quote-service-1.0.0
+  ➜  quote-service-1.0.0 mvn clean install
+  [INFO] Scanning for projects...
+  [INFO]
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building quote-service 1.0.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO]
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ quote-service ---
+  [INFO]
 
-<doge>Such building. So maven. Wow.</doge>
+  <doge>Such building. So maven. Wow.</doge>
 
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 22.803s
-[INFO] Finished at: Wed Jul 27 20:57:14 UTC 2016
-[INFO] Final Memory: 27M/65M
-[INFO] ------------------------------------------------------------------------
-➜  quote-service-1.0.0
-```
+  [INFO] ------------------------------------------------------------------------
+  [INFO] BUILD SUCCESS
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Total time: 22.803s
+  [INFO] Finished at: Wed Jul 27 20:57:14 UTC 2016
+  [INFO] Final Memory: 27M/65M
+  [INFO] ------------------------------------------------------------------------
+  ➜  quote-service-1.0.0
+  ```
 
-Run it...
+  * Run it...
 
-```Shell
-➜  quote-service-1.0.0 mvn spring-boot:run
-[INFO] Scanning for projects...
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] Building quote-service 1.0.0
-[INFO] ------------------------------------------------------------------------
-[INFO]
-[INFO] >>> spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) @ quote-service >>>
-[INFO]
+  ```Shell
+  ➜  quote-service-1.0.0 mvn spring-boot:run
+  [INFO] Scanning for projects...
+  [INFO]
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building quote-service 1.0.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO]
+  [INFO] >>> spring-boot-maven-plugin:1.2.3.RELEASE:run (default-cli) @ quote-service >>>
+  [INFO]
 
-<snipped output>
+  <snipped output>
 
-2016-07-27 21:14:26.140  INFO 16982 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2016-07-27 21:14:26.147  INFO 16982 --- [lication.main()] o.s.nanotrader.quote.Application         : Started Application in 7.614 seconds (JVM running for 16.288)
-```
+  2016-07-27 21:14:26.140  INFO 16982 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+  2016-07-27 21:14:26.147  INFO 16982 --- [lication.main()] o.s.nanotrader.quote.Application         : Started Application in 7.614 seconds (JVM running for 16.288)
+  ```
 
-And in another console, test it...
+  * And in another console, test it...
 
-```Shell
-➜  ~ curl http://localhost:8080/quotes/GOOG
-{"created":"2016-07-27T21:25:16Z","DaysLow":737.0,"Open":738.42,"PreviousClose":738.42,"Volume":799448,"Price":742.14,"DaysHigh":743.93,"Name":"Alphabet Inc.","Symbol":"GOOG","Change":3.72,"PercentageChange":"+0.50%","Ask":742.16,"Bid":741.85}%                                                                                                                                                                ➜  ~
-```
+  ```Shell
+  ➜  ~ curl http://localhost:8080/quotes/GOOG
+  {"created":"2016-07-27T21:25:16Z","DaysLow":737.0,"Open":738.42,"PreviousClose":738.42,"Volume":799448,"Price":742.14,"DaysHigh":743.93,"Name":"Alphabet Inc.","Symbol":"GOOG","Change":3.72,"PercentageChange":"+0.50%","Ask":742.16,"Bid":741.85}%                                                                                                                                                                ➜  ~
+  ```
 
 3. Assuming everything is working as expected, we can now deploy this api to PCF. Since we're all playing in the same space, please give it a unique name and/or route when you push the app. In the next few minutes, we'll be binding the route for this API to the Apigee Edge route service. That means we'll want to keep our routes unique and avoid conflicts.
 
-```Shell
-➜  quote-service-1.0.0 cf target
+  ```Shell
+  ➜  quote-service-1.0.0 cf target
 
-API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
-User:           springone
-Org:            springone
-Space:          carloseberhardt
-➜  quote-service-1.0.0 cf push carlos1quotes
-Using manifest file /home/ubuntu/working/quote-service-1.0.0/manifest.yml
+  API endpoint:   https://api.pcf.apigeese.net (API version: 2.54.0)
+  User:           springone
+  Org:            springone
+  Space:          carloseberhardt
+  ➜  quote-service-1.0.0 cf push carlos1quotes
+  Using manifest file /home/ubuntu/working/quote-service-1.0.0/manifest.yml
 
-Creating app carlos1quotes in org springone / space carloseberhardt as springone...
-OK
+  Creating app carlos1quotes in org springone / space carloseberhardt as springone...
+  OK
 
-Creating route carlos1quotes.pcf.apigeese.net...
-OK
+  Creating route carlos1quotes.pcf.apigeese.net...
+  OK
 
-Binding carlos1quotes.pcf.apigeese.net to carlos1quotes...
-OK
+  Binding carlos1quotes.pcf.apigeese.net to carlos1quotes...
+  OK
 
-Uploading carlos1quotes...
-Uploading app files from: /tmp/unzipped-app223024643
-Uploading 965.3K, 110 files
-Done uploading
+  Uploading carlos1quotes...
+  Uploading app files from: /tmp/unzipped-app223024643
+  Uploading 965.3K, 110 files
+  Done uploading
 
-<snipped output>
+  <snipped output>
 
-Showing health and status for app carlos1quotes in org springone / space carloseberhardt as springone...
-OK
+  Showing health and status for app carlos1quotes in org springone / space carloseberhardt as springone...
+  OK
 
-requested state: started
-instances: 1/1
-usage: 512M x 1 instances
-urls: carlos1quotes.pcf.apigeese.net
-last uploaded: Wed Jul 27 21:31:45 UTC 2016
-stack: unknown
-buildpack: java-buildpack=v3.6-offline-https://github.com/cloudfoundry/java-buildpack.git#5194155 java-main open-jdk-like-jre=1.8.0_71 open-jdk-like-memory-calculator=2.0.1_RELEASE spring-auto-reconfiguration=1.10.0_RELEASE
+  requested state: started
+  instances: 1/1
+  usage: 512M x 1 instances
+  urls: carlos1quotes.pcf.apigeese.net
+  last uploaded: Wed Jul 27 21:31:45 UTC 2016
+  stack: unknown
+  buildpack: java-buildpack=v3.6-offline-https://github.com/cloudfoundry/java-buildpack.git#5194155 java-main open-jdk-like-jre=1.8.0_71 open-jdk-like-memory-calculator=2.0.1_RELEASE spring-auto-reconfiguration=1.10.0_RELEASE
 
-     state     since                    cpu    memory           disk           details
-#0   running   2016-07-27 09:32:37 PM   0.0%   315.2M of 512M   145.6M of 1G
-➜  quote-service-1.0.0
-```
+       state     since                    cpu    memory           disk           details
+  #0   running   2016-07-27 09:32:37 PM   0.0%   315.2M of 512M   145.6M of 1G
+  ➜  quote-service-1.0.0
+  ```
+
 Tada! App is running... we can test via curl or browser...
 
 ```Shell
