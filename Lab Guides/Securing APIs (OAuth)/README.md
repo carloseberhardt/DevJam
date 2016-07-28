@@ -4,6 +4,9 @@
 
 ![](./media/image19.png)
 
+## NOTICE for SpringOne DevJam --- this document has not been modified for the SpringOne session and it refers to proxies, etc that we don't have. Substitute your route services proxy as appropriate. Please don't hesitate to ask for clarification on anything!
+
+
 **Overview**
 
 There are several out-of-the-box security policies that Apigee Edge
