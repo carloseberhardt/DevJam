@@ -91,7 +91,7 @@ We have a shared PCF environment. We're not creating individual accounts out the
 
 ### An API to Deploy
 
-1. Grab the first release of the example API, available here: [https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0(https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0)]
+1. Grab the first release of the example API, available here: [https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0](https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0)
 
   ```Shell
   ➜  ~ mkdir working
