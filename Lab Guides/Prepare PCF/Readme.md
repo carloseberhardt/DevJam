@@ -14,10 +14,10 @@ We have a couple of prerequisites to get out of the way to ensure that you can c
 Of course you're welcome pair on these exercises but it might be more fun to mash keys on your own.
 
 ### Apigee Trial account
-Open a browser (for best experience, a current release) and navigate to [https://edge.apigee.com(https://edge.apigee.com)]. If you cannot log in, create an account. You'll need access to your email in order to activate your account if you haven't completed this step prior to the session. Let us know and we can zip through this.
+Open a browser (for best experience, a current release) and navigate to [https://edge.apigee.com](https://edge.apigee.com). If you cannot log in, create an account. You'll need access to your email in order to activate your account if you haven't completed this step prior to the session. Let us know and we can zip through this.
 
 ### CF CLI
-You need the CF CLI installed on your dev environment. Get that here: [https://github.com/cloudfoundry/cli(https://github.com/cloudfoundry/cli)]
+You need the CF CLI installed on your dev environment. Get that here: [https://github.com/cloudfoundry/cli](https://github.com/cloudfoundry/cli)
 
 ### Dev tools
 We have a sample Spring Boot API project that we will deploy during the session. If you want to use this you'll need JDK, maven, etc. If you want to push your own API to CF that should be fine, too. Just make sure you've got all the tools you need.
@@ -91,7 +91,7 @@ We have a shared PCF environment. We're not creating individual accounts out the
 
 ### An API to Deploy
 
-1. Grab the first release of the example API, available here: [https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0(https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0)]
+1. Grab the first release of the example API, available here: [https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0](https://github.com/carloseberhardt/quote-service/releases/tag/v1.0.0)
 
   ```Shell
   ➜  ~ mkdir working
